@@ -9,7 +9,7 @@
   "media": {
     "introVideo": "/media/videos/1.mp4",
     "introPoster": "/media/backgrounds/1.jpg",
-    "backgroundMusic": "/media/audio/romantic.mp3",
+    "backgroundMusic": "/media/audios/1.mp3",
     "videoPlaybackRate": 0.8,
     "showVideoOnCurtainScene": true
   },
@@ -65,7 +65,7 @@
     "enablePhotoRibbon": true,
     "enableFullscreenButton": true,
     "saveProgressLocally": true,
-    "musicVolume": 0.5
+    "musicVolume": 0.3
   },
   "colors": {
     "deepBlack": "#080808",

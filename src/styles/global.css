@@ -185,6 +185,21 @@ button {
   margin-left: 8px;
 }
 
+/* Libellés doubles des boutons du HUD : texte complet sur grand écran,
+   icône seule sur petit écran pour éviter l'entremêlement. */
+.hud-btn-compact { display: none; font-size: 1.05rem; line-height: 1; }
+.hud-volume { width: 70px; }
+
+@media (max-width: 640px) {
+  .hud { flex-wrap: wrap; row-gap: 0.4rem; }
+  .hud .btn-ghost { padding: 0.35em 0.8em; font-size: 0.85rem; min-height: 36px; min-width: 36px; }
+  .hud-btn-full { display: none; }
+  .hud-btn-compact { display: inline; }
+  .hud-volume { width: 54px; }
+  .hud-label { display: none; }
+  .btn-royal { display: block; width: min(320px, 84vw); margin: 0.5rem auto; }
+}
+
 /* ---------- Rideau ---------- */
 .curtain-stage {
   position: absolute;
@@ -400,12 +415,14 @@ button {
   inset: 0;
   z-index: 80;
   display: flex;
-  align-items: center;
   justify-content: center;
+  overflow-y: auto;
   background: rgba(4, 4, 4, 0.88);
   backdrop-filter: blur(6px);
   padding: 1rem;
 }
+/* Centre la modale quand elle tient à l'écran, permet le scroll interne sinon. */
+.overlay-modal > * { margin: auto; }
 
 .chapter-nav {
   display: flex;
@@ -425,7 +442,6 @@ button {
 }
 
 @media (max-width: 640px) {
-  .hud-label { display: none; }
   .btn-royal { display: block; width: min(320px, 84vw); margin: 0.5rem auto; }
 }
 

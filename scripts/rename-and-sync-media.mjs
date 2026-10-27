@@ -21,6 +21,7 @@ const EXT_BY_TYPE = {
   photos: ['.jpg', '.jpeg', '.png', '.webp', '.avif'],
   videos: ['.mp4', '.webm', '.mov', '.m4v'],
   backgrounds: ['.jpg', '.jpeg', '.png', '.webp', '.avif'],
+  audios: ['.mp3', '.mpeg', '.m4a', '.aac', '.ogg', '.wav'],
 }
 
 function mediaFiles(sub) {
@@ -35,26 +36,29 @@ function mediaFiles(sub) {
 /**
  * Renommage en deux passes (tmp-N.ext puis N.ext) pour éviter
  * qu'un fichier cible écrase un fichier source pas encore déplacé.
+ * normalizeExt permet de corriger les extensions mensongères
+ * (ex. « .mpeg » de WhatsApp qui est en réalité un MP3).
  */
-function renameSequential(sub) {
+function renameSequential(sub, normalizeExt = (ext) => ext) {
   const dir = path.join(mediaDir, sub)
   const files = mediaFiles(sub)
-  files.forEach((f, i) => {
-    const ext = path.extname(f).toLowerCase()
-    const tmp = `__tmp-${i + 1}${ext}`
-    fs.renameSync(path.join(dir, f), path.join(dir, tmp))
+  const targetExt = files.map((f) => normalizeExt(path.extname(f).toLowerCase()))
+  files.forEach((_, i) => {
+    fs.renameSync(path.join(dir, files[i]), path.join(dir, `__tmp-${i + 1}${targetExt[i]}`))
   })
   files.forEach((_, i) => {
-    const ext = path.extname(files[i]).toLowerCase()
-    fs.renameSync(path.join(dir, `__tmp-${i + 1}${ext}`), path.join(dir, `${i + 1}${ext}`))
+    fs.renameSync(path.join(dir, `__tmp-${i + 1}${targetExt[i]}`), path.join(dir, `${i + 1}${targetExt[i]}`))
   })
-  return files.map((f, i) => `${i + 1}${path.extname(f).toLowerCase()}`)
+  return files.map((_, i) => `${i + 1}${targetExt[i]}`)
 }
 
 const photos = renameSequential('photos')
 const videos = renameSequential('videos')
 const backgrounds = renameSequential('backgrounds')
-console.log(`Renommés : ${photos.length} photos, ${videos.length} vidéos, ${backgrounds.length} fonds.`)
+const audios = renameSequential('audios', (ext) => (ext === '.mpeg' ? '.mp3' : ext))
+console.log(
+  `Renommés : ${photos.length} photos, ${videos.length} vidéos, ${backgrounds.length} fonds, ${audios.length} audios.`,
+)
 
 if (photos.length === 0) {
   console.error('Aucune photo trouvée : gallery.json non régénéré.')
@@ -87,6 +91,7 @@ const configPath = path.join(dataDir, 'site-config.json')
 const siteConfig = JSON.parse(fs.readFileSync(configPath, 'utf8'))
 if (videos.length > 0) siteConfig.media.introVideo = `/media/videos/${videos[0]}`
 if (backgrounds.length > 0) siteConfig.media.introPoster = `/media/backgrounds/${backgrounds[0]}`
+if (audios.length > 0) siteConfig.media.backgroundMusic = `/media/audios/${audios[0]}`
 siteConfig.partnerName = 'Toi'
 fs.writeFileSync(configPath, JSON.stringify(siteConfig, null, 2) + '\n')
 

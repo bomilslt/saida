@@ -92,7 +92,7 @@ export default function App() {
       scene = (
         <>
           {siteConfig.media.showVideoOnCurtainScene && <VideoBackdrop />}
-          <CurtainScene onOpen={() => goto('invitation')} />
+          <CurtainScene onOpen={() => goto('invitation')} onOpenCurtain={music.play} />
         </>
       )
       break
@@ -176,7 +176,8 @@ export default function App() {
           <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
             {music.available && (
               <button type="button" className="btn-ghost" onClick={music.toggle} aria-pressed={music.playing} aria-label={music.playing ? 'Mettre la musique en pause' : 'Lancer la musique'}>
-                {music.playing ? 'Musique : en cours' : 'Musique'}
+                <span className="hud-btn-full">{music.playing ? 'Musique : en cours' : 'Musique'}</span>
+                <span className="hud-btn-compact" aria-hidden="true">♪</span>
               </button>
             )}
             {music.available && music.playing && (
@@ -188,19 +189,23 @@ export default function App() {
                 value={music.volume}
                 onChange={(e) => music.changeVolume(Number(e.target.value))}
                 aria-label="Volume de la musique"
-                style={{ width: 70, accentColor: 'var(--c-gold)' }}
+                className="hud-volume"
+                style={{ accentColor: 'var(--c-gold)' }}
               />
             )}
             {siteConfig.settings.enableFullscreenButton && (
               <button type="button" className="btn-ghost" onClick={toggleFullscreen} aria-pressed={isFullscreen}>
-                {isFullscreen ? 'Quitter plein écran' : 'Plein écran'}
+                <span className="hud-btn-full">{isFullscreen ? 'Quitter plein écran' : 'Plein écran'}</span>
+                <span className="hud-btn-compact" aria-hidden="true">⛶</span>
               </button>
             )}
-            <button type="button" className="btn-ghost" onClick={() => setShowChapters((s) => !s)} aria-expanded={showChapters}>
-              Chapitres
+            <button type="button" className="btn-ghost" onClick={() => setShowChapters((s) => !s)} aria-expanded={showChapters} aria-label="Chapitres">
+              <span className="hud-btn-full">Chapitres</span>
+              <span className="hud-btn-compact" aria-hidden="true">☰</span>
             </button>
             <button type="button" className="btn-ghost" onClick={restart} aria-label="Recommencer l'expérience depuis le début">
-              Recommencer
+              <span className="hud-btn-full">Recommencer</span>
+              <span className="hud-btn-compact" aria-hidden="true">↺</span>
             </button>
           </div>
         </div>

@@ -5,10 +5,11 @@ export default defineConfig({
   plugins: [react()],
   base: './',
   server: {
-    // Les archives (ex. zips WhatsApp) peuvent être verrouillées par une
-    // autre application : on ne les watch pas, sinon le serveur plante.
+    // Les médias (photos, vidéos, audios, archives WhatsApp) sont souvent
+    // verrouillés pendant leur copie : on ne les watch pas, sinon le
+    // serveur plante (EBUSY). Ils sont servis tels quels, sans HMR utile.
     watch: {
-      ignored: ['**/*.zip'],
+      ignored: ['**/public/media/**'],
     },
   },
 })

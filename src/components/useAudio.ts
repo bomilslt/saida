@@ -23,9 +23,14 @@ export function useBackgroundMusic() {
     audio.loop = true
     audio.preload = 'none' // on ne télécharge la musique qu'au premier clic utilisateur
     audio.volume = volume
-    audio.addEventListener('error', () => setAvailable(false))
+    // StrictMode (dev) démonte puis remonte l'effet : le cleanup ci-dessous
+    // vide audio.src, ce qui émet une erreur factice. On détache le listener
+    // avant pour ne pas marquer la musique indisponible à tort.
+    const onError = () => setAvailable(false)
+    audio.addEventListener('error', onError)
     audioRef.current = audio
     return () => {
+      audio.removeEventListener('error', onError)
       audio.pause()
       audio.src = ''
     }
@@ -44,6 +49,18 @@ export function useBackgroundMusic() {
       }
     } else {
       audio.pause()
+      setPlaying(false)
+    }
+  }, [available])
+
+  /** Démarrage unilatéral (jamais de pause) — ex. ouverture du rideau. */
+  const play = useCallback(async () => {
+    const audio = audioRef.current
+    if (!audio || !available || !audio.paused) return
+    try {
+      await audio.play()
+      setPlaying(true)
+    } catch {
       setPlaying(false)
     }
   }, [available])
@@ -82,5 +99,5 @@ export function useBackgroundMusic() {
     [],
   )
 
-  return { available, playing, volume, toggle, changeVolume, chime }
+  return { available, playing, volume, toggle, play, changeVolume, chime }
 }

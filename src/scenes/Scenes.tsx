@@ -23,7 +23,7 @@ import { VideoBackdrop } from '../components/VideoBackdrop'
 /* ==================================================================== */
 /* SCÈNE 1 — L'OUVERTURE DU RIDEAU                                      */
 /* ==================================================================== */
-export function CurtainScene({ onOpen }: { onOpen: () => void }) {
+export function CurtainScene({ onOpen, onOpenCurtain }: { onOpen: () => void; onOpenCurtain?: () => void }) {
   const [opening, setOpening] = useState(false)
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const duration = reduced ? 0.4 : siteConfig.settings.curtainOpenDurationMs / 1000
@@ -101,7 +101,14 @@ export function CurtainScene({ onOpen }: { onOpen: () => void }) {
           <p className="handwriting" style={{ fontSize: 'clamp(1.3rem, 4vw, 2rem)', margin: 0, textAlign: 'center' }}>
             {siteConfig.curtainTeaser}
           </p>
-          <button type="button" className="btn-royal primary" onClick={() => setOpening(true)}>
+          <button
+            type="button"
+            className="btn-royal primary"
+            onClick={() => {
+              setOpening(true)
+              onOpenCurtain?.()
+            }}
+          >
             Ouvrir le rideau
           </button>
         </div>

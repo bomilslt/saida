@@ -1,0 +1,47 @@
+[
+  {
+    "id": "souvenir-01",
+    "src": "/media/photos/photo-01.jpg",
+    "caption": "",
+    "date": "",
+    "alt": "Souvenir de nous deux",
+    "order": 1,
+    "category": "nous"
+  },
+  {
+    "id": "souvenir-02",
+    "src": "/media/photos/photo-02.jpg",
+    "caption": "LEGENDE_A_REMPLACER",
+    "date": "",
+    "alt": "Un instant partagé",
+    "order": 2,
+    "category": "nous"
+  },
+  {
+    "id": "souvenir-03",
+    "src": "/media/photos/photo-03.jpg",
+    "caption": "",
+    "date": "",
+    "alt": "Un souvenir précieux",
+    "order": 3,
+    "category": "rires"
+  },
+  {
+    "id": "souvenir-04",
+    "src": "/media/photos/photo-04.jpg",
+    "caption": "",
+    "date": "",
+    "alt": "Toi et moi",
+    "order": 4,
+    "category": "voyages"
+  },
+  {
+    "id": "souvenir-05",
+    "src": "/media/photos/photo-05.jpg",
+    "caption": "",
+    "date": "",
+    "alt": "Notre histoire en image",
+    "order": 5,
+    "category": "nous"
+  }
+]

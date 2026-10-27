@@ -1,0 +1,10 @@
+{
+  "galleryIntro": "Chaque image d'ici est une page de notre histoire. Prends le temps de les regarder, comme moi je prends le temps de les garder.",
+  "ribbonTitle": "Un ruban de nos instants",
+  "items": [
+    { "id": "memoire-01", "text": "Notre premier fou rire dont on rit encore.", "date": "" },
+    { "id": "memoire-02", "text": "Ce silence ensemble qui valait tous les discours.", "date": "" },
+    { "id": "memoire-03", "text": "Cette soirée où tu as pris ma main sans rien dire.", "date": "" }
+  ],
+  "neutralCaption": "Un instant à nous"
+}

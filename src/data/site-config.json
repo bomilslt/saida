@@ -1,0 +1,47 @@
+{
+  "title": "Le Royaume de mon cœur",
+  "kingdomName": "Le Royaume de mon cœur",
+  "partnerName": "PRENOM_A_REMPLACER",
+  "authorName": "Francky",
+  "signatureName": "Francky",
+  "invitationLine": "Honorable reine, bienvenue dans votre royaume… Le cœur de Francky.",
+  "curtainTeaser": "Une histoire écrite avec le cœur…",
+  "media": {
+    "introVideo": "/media/videos/intro.mp4",
+    "introPoster": "/media/backgrounds/intro-poster.jpg",
+    "backgroundMusic": "/media/audio/romantic.mp3",
+    "videoPlaybackRate": 0.8,
+    "showVideoOnCurtainScene": true
+  },
+  "chapters": [
+    { "id": "curtain", "label": "L'ouverture du rideau" },
+    { "id": "invitation", "label": "L'invitation de la reine" },
+    { "id": "kingdom", "label": "L'entrée dans le royaume" },
+    { "id": "declaration", "label": "La grande déclaration" },
+    { "id": "gallery", "label": "Nos souvenirs" },
+    { "id": "regrets", "label": "Regrets et pardon" },
+    { "id": "future", "label": "Le futur que j'imagine" },
+    { "id": "promise", "label": "La promesse finale" },
+    { "id": "finalletter", "label": "La lettre qui s'écrit" },
+    { "id": "epilogue", "label": "L'épilogue secret" }
+  ],
+  "settings": {
+    "animationSpeed": 1,
+    "transitionDurationMs": 1200,
+    "curtainOpenDurationMs": 3200,
+    "enableParticles": true,
+    "enableSoundEffects": true,
+    "enableSecretStar": true,
+    "enablePhotoRibbon": true,
+    "enableFullscreenButton": true,
+    "saveProgressLocally": true,
+    "musicVolume": 0.5
+  },
+  "colors": {
+    "deepBlack": "#080808",
+    "velvetBlack": "#11100F",
+    "champagneGold": "#D4AF69",
+    "brightGold": "#F4D58D",
+    "softIvory": "#F5F0E6"
+  }
+}

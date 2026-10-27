@@ -1,0 +1,10 @@
+[
+  {
+    "id": "video-01",
+    "src": "/media/videos/intro.mp4",
+    "poster": "/media/backgrounds/intro-poster.jpg",
+    "caption": "",
+    "alt": "Une vidéo de nous deux",
+    "order": 1
+  }
+]

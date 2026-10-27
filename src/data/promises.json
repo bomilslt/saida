@@ -1,0 +1,28 @@
+{
+  "regretsTitle": "Les pages que j'aimerais écrire autrement",
+  "regretsParagraphs": [
+    "Je sais qu'il y a eu des moments où mes mots ou mes silences t'ont blessée. Je ne vais pas minimiser : tu méritais mieux, et c'est sur moi que repose cette responsabilité.",
+    "Je regrette sincèrement chaque fois que j'ai pu te faire douter de ta place dans ma vie, chaque fois que tu as dû porter seule un poids qui aurait dû être partagé.",
+    "Je ne te demande pas de me pardonner aujourd'hui, ni même de me rassurer. Le pardon n'est pas une dette ; il viendra s'il doit venir, à ton rythme, sans pression.",
+    "Ce que je peux te promettre, ce sont des actes : mieux t'écouter, oser les conversations difficiles, accueillir tes émotions au lieu de les fuir, et devenir un partenaire plus attentif, jour après jour."
+  ],
+  "regretsClosing": "Je ne peux pas réécrire chaque page de notre histoire, mais je peux choisir avec quelle sincérité j'écrirai les prochaines.",
+  "futureTitle": "Le futur que j'imagine avec toi",
+  "futureParagraphs": [
+    "Je n'ai pas besoin d'un plan parfait pour savoir où je veux aller : mon avenir a ta silhouette. Des matins calmes, des projets partagés, des tempêtes traversées à deux, et toujours, au retour, la même envie de te regarder.",
+    "Je veux qu'on continue à s'apprendre, même quand on croira se connaître par cœur. Les années passent, les personnes changent, et j'aimerais avoir le privilège de découvrir chacune de tes nouvelles saisons.",
+    "Construire, ce n'est pas promettre que tout sera facile. C'est choisir, encore et encore, de rendre les choses possibles — ensemble, patiemment, avec confiance."
+  ],
+  "futureStrongLine": "Mon projet le plus cher, c'est nous : un chemin qui n'en finit pas, et que je voudrais marcher à tes côtés.",
+  "promiseFinal": "À toi, ma reine. Aujourd'hui, demain et dans tous les chapitres que la vie nous permettra d'écrire.",
+  "finalQuestion": "Veux-tu continuer à écrire cette histoire avec moi ?",
+  "finalAnswers": {
+    "yes": "Alors ma plume est à toi, pour tous les chapitres à venir.",
+    "maybe": "Pas de pressions : les plus belles histoires prennent leur temps. Je serai là, mot après mot.",
+    "later": "Le royaume patientera : il a été construit pour toi, il restera ouvert jusqu'à ton prochain souffle."
+  },
+  "epilogue": {
+    "hint": "Quelque part dans ce royaume, une petite étoile dorée attend d'être touchée…",
+    "secretLetter": "Tu as trouvé l'étoile cachée. Dans une autre vie peut-être, dans toutes les autres sûrement, mon cœur choisirait le tien en premier. Ceci était le secret que le royaume gardait pour toi seul(e)."
+  }
+}

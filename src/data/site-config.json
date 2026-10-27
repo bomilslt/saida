@@ -1,29 +1,59 @@
 {
   "title": "Le Royaume de mon cœur",
   "kingdomName": "Le Royaume de mon cœur",
-  "partnerName": "PRENOM_A_REMPLACER",
+  "partnerName": "Toi",
   "authorName": "Francky",
   "signatureName": "Francky",
   "invitationLine": "Honorable reine, bienvenue dans votre royaume… Le cœur de Francky.",
   "curtainTeaser": "Une histoire écrite avec le cœur…",
   "media": {
-    "introVideo": "/media/videos/intro.mp4",
-    "introPoster": "/media/backgrounds/intro-poster.jpg",
+    "introVideo": "/media/videos/1.mp4",
+    "introPoster": "/media/backgrounds/1.jpg",
     "backgroundMusic": "/media/audio/romantic.mp3",
     "videoPlaybackRate": 0.8,
     "showVideoOnCurtainScene": true
   },
   "chapters": [
-    { "id": "curtain", "label": "L'ouverture du rideau" },
-    { "id": "invitation", "label": "L'invitation de la reine" },
-    { "id": "kingdom", "label": "L'entrée dans le royaume" },
-    { "id": "declaration", "label": "La grande déclaration" },
-    { "id": "gallery", "label": "Nos souvenirs" },
-    { "id": "regrets", "label": "Regrets et pardon" },
-    { "id": "future", "label": "Le futur que j'imagine" },
-    { "id": "promise", "label": "La promesse finale" },
-    { "id": "finalletter", "label": "La lettre qui s'écrit" },
-    { "id": "epilogue", "label": "L'épilogue secret" }
+    {
+      "id": "curtain",
+      "label": "L'ouverture du rideau"
+    },
+    {
+      "id": "invitation",
+      "label": "L'invitation de la reine"
+    },
+    {
+      "id": "kingdom",
+      "label": "L'entrée dans le royaume"
+    },
+    {
+      "id": "declaration",
+      "label": "La grande déclaration"
+    },
+    {
+      "id": "gallery",
+      "label": "Nos souvenirs"
+    },
+    {
+      "id": "regrets",
+      "label": "Regrets et pardon"
+    },
+    {
+      "id": "future",
+      "label": "Le futur que j'imagine"
+    },
+    {
+      "id": "promise",
+      "label": "La promesse finale"
+    },
+    {
+      "id": "finalletter",
+      "label": "La lettre qui s'écrit"
+    },
+    {
+      "id": "epilogue",
+      "label": "L'épilogue secret"
+    }
   ],
   "settings": {
     "animationSpeed": 1,

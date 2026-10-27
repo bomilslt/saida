@@ -473,7 +473,7 @@ export function FutureScene({ onNext }: { onNext: () => void }) {
               {promises.futureStrongLine}
             </p>
             <button type="button" className="btn-royal primary" style={{ animation: 'paraIn 1.5s ease 0.6s both' }} onClick={onNext}>
-              Vers la promesse finale
+              ma promesse
             </button>
           </>
         )}
@@ -552,7 +552,7 @@ export function PromiseScene({ onContinue }: { onContinue: () => void }) {
             </p>
             <div style={{ display: 'flex', gap: '0.6rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '1.4rem' }}>
               <button type="button" className="btn-royal primary" onClick={onContinue}>
-                Découvrir la lettre qui s'écrit…
+                Poursuivre…
               </button>
             </div>
             <div style={{ marginTop: '1.6rem', display: 'flex', justifyContent: 'center', gap: 12, opacity: 0.8 }}>

@@ -129,16 +129,18 @@ button {
 }
 
 .btn-ghost {
-  background: transparent;
-  border: 1px solid rgba(245, 240, 230, 0.25);
-  color: rgba(245, 240, 230, 0.75);
+  background: rgba(8, 8, 8, 0.68);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(245, 240, 230, 0.3);
+  color: rgba(245, 240, 230, 0.88);
   border-radius: 999px;
   padding: 0.55em 1.4em;
   font-size: 0.9rem;
-  transition: color 0.3s, border-color 0.3s;
+  transition: color 0.3s, border-color 0.3s, background 0.3s;
   min-height: 44px;
 }
-.btn-ghost:hover { color: var(--c-gold-bright); border-color: var(--c-gold); }
+.btn-ghost:hover { color: var(--c-gold-bright); border-color: var(--c-gold); background: rgba(17, 16, 15, 0.85); }
 
 /* ---------- HUD (barre supérieure) ---------- */
 .hud {
@@ -151,6 +153,7 @@ button {
   gap: 0.5rem;
   padding: calc(0.6rem + env(safe-area-inset-top)) clamp(0.8rem, 3vw, 2rem) 0.6rem;
   pointer-events: none;
+  background: linear-gradient(180deg, rgba(8, 8, 8, 0.88) 0%, rgba(8, 8, 8, 0.6) 70%, rgba(8, 8, 8, 0) 100%);
 }
 .hud > * { pointer-events: auto; }
 

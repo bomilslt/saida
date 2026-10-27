@@ -55,10 +55,10 @@ function Carousel({ onOpen }: { onOpen: (i: number) => void }) {
   const prev = () => setIndex((i) => (i - 1 + photos.length) % photos.length)
   const next = () => setIndex((i) => (i + 1) % photos.length)
 
-  // Diaporama automatique : avance toutes les 4,5 s quand il est actif.
+  // Diaporama automatique : avance toutes les 2,5 s quand il est actif.
   useEffect(() => {
     if (!slideshow) return undefined
-    const t = window.setInterval(() => next(), 4500)
+    const t = window.setInterval(() => next(), 2500)
     return () => window.clearInterval(t)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slideshow])
@@ -198,9 +198,7 @@ export function PhotoRibbon() {
           ))}
         </div>
       </div>
-      <button type="button" className="btn-ghost" style={{ marginTop: '0.8rem' }} onClick={() => setPaused((x) => !x)} aria-pressed={paused}>
-        {paused ? 'Reprendre le ruban' : 'Mettre le ruban en pause'}
-      </button>
+
     </div>
   )
 }
@@ -241,9 +239,10 @@ export default function GalleryScene({ onNext }: { onNext: () => void }) {
                 <video
                   src={video.src}
                   poster={video.poster}
-                  controls
+                  autoPlay
+                  loop
                   playsInline
-                  preload="none"
+                  preload="auto"
                   muted
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   onError={(e) => {
@@ -265,7 +264,7 @@ export default function GalleryScene({ onNext }: { onNext: () => void }) {
 
         <div style={{ marginTop: '2.4rem' }}>
           <button type="button" className="btn-royal primary" onClick={onNext}>
-            Poursuivre notre histoire
+            Poursuivre
           </button>
         </div>
       </div>
